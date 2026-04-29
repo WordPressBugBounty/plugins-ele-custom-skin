@@ -1,271 +1,148 @@
-=== Elementor Custom Skin ===
+=== ECS - Ele Custom Skin for Elementor ===
 Contributors: dudaster
-Tags: page-builder, elementor, loop, archive list, post widget, skin, custom, post grid
+Tags: elementor, dark mode, color scheme, loop, container
 Donate link: https://www.paypal.me/dudaster
-Requires at least: 5.0
-Tested up to: 6.5.2
-Stable tag: 3.1.9
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Requires at least: 6.0
+Tested up to: 6.8
+Stable tag: 4.1.0
+Requires PHP: 8.0
+License: GPLv3
+License URI: http://www.gnu.org/licenses/gpl-3.0
 
-Create new skins for Elementor PRO 3.x page builder. Design your own skins for Post and Post Archive Widgets using Elementor Loop Templates. Free post grid for Elementor.
+Seven free modules that extend Elementor where it stops. Dark mode colours, container layouts, mobile menu styling, editorial text, style presets, and more — all modular, all free.
 
 == Description ==
 
-This plugin adds new skin to Elementor Page Builder Posts and Posts Archive widget.
+**ECS adds what Elementor doesn't have — without replacing what it does well.**
 
-You can design a loop item just like a single template and it would be used as a skin so you can be able to create a post grid the way you like.
+Every feature is a standalone module. Enable only what you need from **ECS → Modules** in the WordPress admin. Unused modules load zero CSS, zero JS, and register no hooks.
 
+---
 
-All you have to do is to create a Custom Grid Template and place the Post Item Widget (placeholder) in your template made with sections and columns, and why not other widgets.
+= 🎨 Dark Mode Colours =
 
-[youtube http://www.youtube.com/watch?v=DwLFdaZ69KU&t=94]
+A **Default Colours** tab appears inside Elementor's Site Settings, right next to Global Colors.
 
-For a quick tutorial see Frequently Asked Questions! 
+* Set a **Default** and a **Dark Mode** colour for every global colour slot.
+* Dark mode colours are written as CSS variables — no JavaScript swapping, pure CSS, zero flash.
+* A **fallback swatch** shows the default colour when the dark slot is empty.
+* The **Dark Mode Switcher** widget lets visitors toggle between light and dark with full style controls.
 
-For more details and demo check our official site https://dudaster.com/
+= 📐 Container Layout =
 
-Note: This plugin is an addon of Elementor Page Builder (https://wordpress.org/plugins/elementor/) and will only work with Elementor Page Builder installed.
+Two additional layout modes for Elementor Flex Containers:
 
-Also check <a href="https://dudaster.com/ecs-pro/" target="_blank">Elementor Custom Skin Pro</a>!
+**Slider Mode** — Turn any container into a CSS-only slider. No JS library, no dependencies.
 
-You can expand your freedom in more ways than you can imagine. Check it out at https://dudaster.com/ecs-pro/ !
+**Custom Layout** — Pick a Theme Builder template as the layout frame. Place ECS Placeholder widgets inside the template; ECS distributes the container's children into those slots automatically. Supports cycling and graceful fallback. Works live in the Elementor editor.
+
+= 🔁 Loop Custom Layout =
+
+Arrange Loop Grid items inside a Custom Layout template using ECS Placeholder widgets — powered by Elementor's native Loop Grid query. Full editorial control over the item grid without leaving Elementor.
+
+= 📱 Menu Responsive =
+
+Turn any Elementor Nav Menu widget into a responsive hamburger menu. Layout, alignment, animation, and breakpoint controls — all from the Elementor panel.
+
+= ✍️ Editorial Text =
+
+Wrap images inside text blocks with float controls and captions. Magazine-style editorial layouts built entirely in Elementor.
+
+= 🎨 Style Templates =
+
+Save any widget's Style tab settings as a named preset and apply them to other widgets of the same type in one click — across pages, templates, and sites. Export and import your full style library as JSON.
+
+= 🛠 JSON PowerEdit =
+
+Edit any Elementor widget's raw settings JSON directly from the panel. Raw textarea for paste-and-replace, interactive tree view for surgical edits. Keyboard shortcut: Ctrl/Cmd + Enter to apply.
+
+= ✅ Legacy (ECS 3.x — backward compatibility) =
+
+The original loop skin functionality is preserved in the Legacy module for existing sites built with ECS 3.x. If you're updating from ECS 3.x, this module activates automatically. For new projects, use Elementor's native Loop Builder.
+
+---
+
+Note: This plugin requires Elementor (free). Container Layout (Custom Layout mode) and Style Templates require Elementor Pro.
 
 == Installation ==
 
-1. Upload the plugin files to the `/wp-content/plugins/plugin-name` directory, or install the plugin through the WordPress plugins screen directly.
-2. Activate the plugin through the 'Plugins' screen in WordPress
+1. Install and activate **Elementor** (free).
+2. Upload and activate **ECS - Ele Custom Skin for Elementor** through the Plugins screen.
+3. Go to **ECS → Modules** in the WordPress admin and toggle on only the modules you need.
+4. Activated modules register their controls, widgets, and assets automatically.
 
+**Updating from ECS 3.x?** Just update the plugin. The Legacy module activates automatically; all your existing loop skins keep working.
 
 == Frequently Asked Questions ==
 
-= How can I make and use a custom skin? =
+= I'm updating from ECS 3.x. Will my loop skins break? =
 
-1. Create a new Elementor Template and select the Loop style;
-2. Drag dynamic widgets inside, like Post Title and Text field with dynamic content as Post Summary (wich comes with the module);
-3. Save the new Template;
-4. When you design a page or a Archive template in elementor use Posts Widget inside the page and from Skin (Classic/Cards) you'll see a new sking named Custom, select that!
-5. Voila!
+No. ECS detects existing loop templates and activates the Legacy module automatically on update. Everything works exactly as before.
 
-= Where can i find the new Loop Type? =
+= Can I disable features I don't use? =
 
-The Loop Type would appear in My Templates in Elementor as new type
+Yes. Go to **ECS → Modules** and toggle anything off. Disabled modules load zero CSS, zero JS, and register no hooks on the front end.
 
-= How can I choose the new Custom Skin? =
+= Does Dark Mode require JavaScript? =
 
-Add to your template a Post or Post Archive widget and from Skins select Custom Skin
+No JavaScript is needed for the colour switch itself. The CSS variables are written server-side under `[data-ecs-scheme="alt"]`. The Dark Mode Switcher widget adds a small script only to set that attribute on `<html>` when the visitor toggles — a cookie prevents any flash on page load.
+
+= Does Custom Layout work in the Elementor editor? =
+
+Yes. Layout injection is disabled in the editor so you can edit children normally. A live preview is generated via AJAX when you click away from a child.
+
+= Does Slider Mode require a JS library? =
+
+No. It uses CSS scroll-snap — no jQuery plugin, no swipe library.
+
+= Where do I create a Custom Layout template? =
+
+Go to **Templates → Theme Builder** in Elementor. You'll see a new document type called **Custom Layout**. Build your frame there and place the **ECS Placeholder** widget wherever you want a child to appear.
+
+= Do I need Elementor Pro? =
+
+Dark Mode Colours, Menu Responsive, Editorial Text, Style Templates, JSON PowerEdit, and Loop Custom Layout work with Elementor free. Container Layout (Custom Layout mode) requires Elementor Pro.
+
 
 == Screenshots ==
 
-1. /assets/screenshot-1.png
-2. /assets/screenshot-2.png
-2. /assets/screenshot-3.png
+1. ECS → Modules admin screen — enable or disable each module with a toggle.
+2. Default Colours tab in Elementor Site Settings — set default and dark-mode colours side by side.
+3. Dark Mode Switcher widget in the Elementor panel.
+4. Container Layout — Custom Layout mode distributing children into a Theme Builder template.
+5. Style Templates — saving and applying a style preset from the Style tab.
 
 == Changelog ==
 
+= 4.1.0 =
+* NEW: Style Templates — save and reuse widget style presets across pages and sites.
+* NEW: JSON PowerEdit — edit widget settings JSON directly from the panel.
+* NEW: Loop Custom Layout — arrange Loop Grid items inside a Custom Layout template.
+* Improved: Dark Mode Colours — stability and compatibility improvements.
+* Improved: Container Layout — better editor preview, cycling and fallback behaviour.
+* Fixed: PHP 8.2 dynamic property deprecation in Legacy module.
+* Tested with Elementor 3.35 and WordPress 6.8.
 
-= 3.1.9 =
-* Minor fixes.
-
-= 3.1.8 =
-* Replaced depricated code.
+= 4.0.0 =
+* **Rebuilt from the ground up** — modular architecture, every feature is a toggleable module.
+* NEW: Default Colours tab in Elementor Site Settings with per-colour dark mode support.
+* NEW: Dark Mode Switcher widget (toggle / dual / dropdown modes, full style controls).
+* NEW: Container Layout module — Custom Layout mode and Slider mode.
+* NEW: Menu Responsive module.
+* NEW: Editorial Text widget.
+* NEW: ECS → Modules admin page.
+* Legacy (ECS 3.x): loop skin and Ajax Load More preserved in the Legacy module, auto-activated on update.
 
 = 3.1.7 =
-* Fixed erros with Elementor 3.7.
-* Added support for dynamic media brakepoint CSS.
-
-= 3.1.6 =
-* Fixed issue with Container Element style.
-
-= 3.1.5 =
-* Fixed issue with Custom Grid tab missing when the woocommerce is active.
-* Fixed deprecated erros with the new Elementor version.
-
-= 3.1.4 =
-* Fixed error with Custom Grid Loop Item Widget when added to the template.
-* Fixed issues with the new Theme Builder View
-
-= 3.1.3 =
-* Fixed CSS issue with Elementor PRO 3.4.
-
-= 3.1.2 =
-* Fixed the url error message issues.
-
-= 3.1.1 =
-* Tested for the new elementor versions
+* Fixed errors with Elementor 3.7.
+* Added support for dynamic media breakpoint CSS.
 
 = 3.1.0 =
-* Tweak: Ajax Pagination URL change is optional
-* Tweak: Experimental reinitilization of elementor JavaScript after an Ajax Request
-* Fixed issues with some ACF dynamic values
-* Fixed CSS issues with Ocean WP
-* Fixed Storeforent CSS issues
-* Added support for the latest Wordpress 
-* Added support for the latest version of Elementor
-
-= 3.0.1 =
-* Fixed minor issues
-
-
-= 3.0.0 =
-* Added compatibility with Elementor Pro 3.0
-* Added the history to the pagination
-* fixed editing issue with Storefront theme
-
-
-= 2.2.2 =
-* Fixed jQuery ajax dependecies.
-* Added a timeout for preview for speed improvement.
-* Fixed Astra theme css issues.
-* Fixed AJAX charset issue.
-
-= 2.2.1 =
-* Fixed issue with Ajax call from third party plugins like Smart Filter.
-
-= 2.2.0 =
-* NEW!!! Ajax pagination. Now you can go to Pagination Section in Posts / Archive Posts Widgets and select "Load more" pagination.
-* Solved issue with multiple Custom Grid in one page.
-* Solving Astra Theme Issues with Post Items width shrinkage.
-
-= 2.1.0 =
-* Solved Error issue with Dynamic Button Link. 
-* Solving Astra Theme Issues with Post Items Padding and bordering
-* Post Title made visible again inside Post Items
-* Solved problem with Forms not being sent.
-
-= 2.0.2 =
-* Fixing issues 
-
-= 2.0.1 =
-* Fixing issues 
+* Ajax Pagination URL change is now optional.
+* Experimental reinitialization of Elementor JavaScript after Ajax requests.
 
 = 2.0.0 =
-* NEW!! You can create your own Custom Grid with Custom Grid Template.
-* Fixed issue with Dynamic Conditions causing "No Content" Error in Elementor editor.
-* Added a little preview in Loop Template editor.
-* Fixed issue with missing Loops from Wordpress Admin Bar.
-
-= 1.4.0 =
-* Added ability to use dynamic background to Elementor Widgets.
-* Added ability to use dynamic color on Widgets.
-* Added ability to use dynamic color on Sections and Columns.
-* Added ability to use dynamic color on borders, backgrounds and shape dividers.
-
-
-= 1.3.11 =
-* Fixing compatibility issues Elementor Pro 2.9.0
-
-= 1.3.10 =
-* Fixing compatibility issues with ACF extended
-
-= 1.3.9 =
-* Solved compatibility issues with Elementor 2.8
-* Fixing issue with Title Widget not showing.
-* Added support for Flip Box Widget background. 
-
-= 1.3.8 =
-* Fixing minor issues.
-* Fixing issue loading css over http.
-
-= 1.3.7 =
-* Fixing padding issues with 1.3.6 update.
-* Fixing no results issue. 
-* Added some hooks. Documentation will come later.
-* Fixing dependecies issues on some instalations.
-
-= 1.3.6 =
-* Fixing error for no Loop Templates.
-
-= 1.3.5 =
-* Fixing "CSS flashing" by adding the Loop Template Stylesheet in the Head section of the HTML.
-
-= 1.3.4 =
-* Now you can preview any post_type while you edit Loop Template, including woocommerce products.
-* Fixed dependecies issues.
-
-= 1.3.3 =
-* Fixed issues missing Post Widget Panel
-
-= 1.3.2 =
-* Fixed that annoying Notice
-
-= 1.3.1 =
-* Fixed bugs
-
-= 1.3.0 =
-* Added a quick link button  "Create a Loop Template".
-* Tweak "No Template" default view.
-* Fixed issue in Safari with template selection.
-
-= 1.2.5 =
-* Fixing Elementor dependencies for multisite mode.
-
-= 1.2.4 =
-* Showing deleted templates in the Custom Skin field fixed.
-* Fixed Overflow issue. Now you can add shadows and other objects that can go outside the loop item.
-* Removed Post Per Page in Archive Posts Widget because it's a global query and does nothing. Posts Per Page globaly can be changed from Settings > Reading in Wordpress Dashboard   
-
-= 1.2.3 =
-* Fixed missing posts per page
-
-= 1.2.2 =
-* Fixed issue with missing Elementor
-* Missing Layout style in Archive Posts Widget
-
-= 1.2.1 =
-* Fixed summary length in case of a long excerpt
-
-= 1.2.0 =
-* Now works with WPML
-
-= 1.1.5 =
-* Fixed bugs
-
-= 1.1.4 =
-* Fixed issue with ACF fields for Elementor PRO 2.6.X
-
-= 1.1.3 =
-* Fixed issue with Archive dynamic background
-* Fixed issue with Post Custom Skin dynamic background in editor mode
-
-= 1.1.2 =
-* Fixed bugs
-
-= 1.1.1 =
-* Added support for dynamic background for overlay and motion effects in sections and columns. 
-* Fixed bugs
-
-= 1.1.0 =
-* Added support for dynamic background for sections and columns. Background motions effects not yet supported.
-* Fixed multi language support
-
-= 1.0.9 =
-* Fixed issue with preview template in editor mode
-
-= 1.0.8 =
-* Prevent unnecessary loop template loading (Edit with Elementor would look cleaner now)
-
-= 1.0.7 =
-* Fixed issue with 100% width
-
-= 1.0.6 =
-* Fixed notices issue in Wordpress debug mode
-* Removed some unused skin controls from elementor editor
-
-= 1.0.5 =
-* Fixed issue with Elementor Pro 2.1.
-
-= 1.0.4 =
-* Added Eletheme support. Now you can use {{vars}}.
-
-= 1.0.3 =
-* Fixed skin templates query.
-
-= 1.0.2 =
-* Fixed some BUGS.
-
-= 1.0.1 =
-* Fixed issue with Archive Posts
+* NEW: Custom Grid Template with Loop Item placeholder widget.
 
 = 1.0.0 =
-* Initial Launch with Loop Elementor My Templates Type
+* Initial release — Loop skin for Elementor Posts and Archive Posts widgets.

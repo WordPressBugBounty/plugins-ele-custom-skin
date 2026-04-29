@@ -45,7 +45,7 @@ function elecs_add_more_types($settings){
   if ( ! $document || !array_key_exists('theme_builder', $settings)) {
 		return $settings;
 	}
-  
+
   $new_types=['loop'=>Loop::get_properties()];
   $add_settings=['theme_builder' => ['types' =>$new_types]];
   if (!array_key_exists('loop', $settings['theme_builder']['types'])) $settings = array_merge_recursive($settings, $add_settings);

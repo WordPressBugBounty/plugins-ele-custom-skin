@@ -23,15 +23,15 @@ class Loop extends Single {
     protected static function get_site_editor_type() {
 		return 'loop';
 	}
-  
+
 	public function get_name() {
 		return 'loop';
 	}
-  
+
   public static function get_type() {
 		return 'loop';
 	}
-  
+
   protected static function get_site_editor_thumbnail_url() {
 		return ELECS_URL . 'assets/images/loop.svg';
 	}
@@ -63,9 +63,9 @@ Let's be undependable from Preview As options
 			'page/404' => __( '404', 'elementor-pro' ),
 		];
 	}
-  
+
   public static function get_public_post_types(){
-    //Array ( [post] => Posts [page] => Pages ) 
+    //Array ( [post] => Posts [page] => Pages )
     $post_types_options = [];
     $args = array(
     'public'   => true,
@@ -82,6 +82,6 @@ Let's be undependable from Preview As options
 I want a preview like the template not default
 
 */
-  
- 
+
+
 }

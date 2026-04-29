@@ -24,15 +24,15 @@ class customGrid extends Theme_Section_Document {
   protected static function get_site_editor_type() {
 		return 'custom_grid';
 	}
-  
+
   protected static function get_site_editor_thumbnail_url() {
 		return ELECS_URL . 'assets/images/custom-grid.svg';
 	}
-  
+
 	public function get_name() {
 		return 'custom_grid';
 	}
-  
+
   public static function get_type() {
 		return 'custom_grid';
 	}
@@ -48,7 +48,7 @@ class customGrid extends Theme_Section_Document {
 			],
 		];
     return $categories + parent::get_editor_panel_categories();
-	
+
   }
 
 /*
@@ -56,6 +56,6 @@ class customGrid extends Theme_Section_Document {
 I want a preview like the template not default
 
 */
-  
- 
+
+
 }

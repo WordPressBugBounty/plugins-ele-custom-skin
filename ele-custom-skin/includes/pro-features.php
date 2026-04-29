@@ -43,13 +43,9 @@ function ele_custom_skin_row_meta( $links, $file ) {
 }
 
 function elecs_action_links( $links ) {
-	$links = array_merge($links, array(
-		'<a href="' . esc_url( admin_url( '/edit.php?post_type=elementor_library&tabs_group=theme&elementor_library_type=loop' ) ) . '">' . __( 'Add Loop Template', 'ele-custom-skin' ) . '</a>',
-	));
-  
-  if (!function_exists('ele_custom_skin_pro')) $links = array_merge($links, array(
-      '<a href="' . esc_url( 'https://dudaster.com/ecs-pro/' ) . '" target="_blank" aria-label="' . esc_attr__( 'Go Pro', 'ele-custom-skin' ) . '" style="color:#39b54a;font-weight:bold;">' . esc_html__( 'Go Pro', 'ele-custom-skin' ) . '</a>'
-	));
+	if ( ! defined( 'ELECSP_VER' ) ) {
+		$links[] = '<a href="' . esc_url( 'https://dudaster.com/ecs-pro/' ) . '" target="_blank" aria-label="' . esc_attr__( 'Go Pro', 'ele-custom-skin' ) . '" style="color:#39b54a;font-weight:bold;">' . esc_html__( 'Go Pro', 'ele-custom-skin' ) . '</a>';
+	}
 	return $links;
 }
 add_action( 'plugin_action_links_' . ELECS_NAME, 'elecs_action_links' );
