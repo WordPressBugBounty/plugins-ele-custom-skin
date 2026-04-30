@@ -24,7 +24,7 @@ class Skin_Posts_ECS extends Skin_Base {
             'current' => 0,
             'allow' => false,
           ];
-  protected string $current_permalink = '';
+  protected $current_permalink = '';
 
 
 	
