@@ -4,7 +4,7 @@ Tags: elementor, dark mode, color scheme, loop, container
 Donate link: https://www.paypal.me/dudaster
 Requires at least: 6.0
 Tested up to: 6.9
-Stable tag: 4.1.8
+Stable tag: 4.1.9
 Requires PHP: 8.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0
@@ -114,9 +114,12 @@ Dark Mode Colours, Menu Responsive, Editorial Text, Style Templates, JSON PowerE
 
 == Changelog ==
 
-= 4.1.8 =
-Fixed: Legacy module Pro detection; Added: Dynamic Repeater Builder preview; Improved: Legacy Pro module shown last
+= 4.1.9 =
+Fixed PHP Fatal error in Legacy skin caused by $current_permalink redeclaration with Elementor Pro 4.x
 
+
+= 4.1.9 =
+* Fixed: Legacy module (ECS Loop Skin) — removed redeclaration of $current_permalink property that caused a PHP Fatal error with Elementor Pro 4.x due to a PHP 8.1+ property inheritance rule.
 
 = 4.1.8 =
 * Fixed: Legacy module — Pro detection now correctly uses ELECSP_VER constant (ECS Pro 4.x) instead of the removed ele_custom_skin_pro() function from 3.x; "Get ECS Pro" notice and locked preview controls no longer appear when ECS Pro is active.
