@@ -4,7 +4,7 @@ Tags: elementor, dark mode, color scheme, loop, container
 Donate link: https://www.paypal.me/dudaster
 Requires at least: 6.0
 Tested up to: 7.1
-Stable tag: 4.3.13
+Stable tag: 4.3.14
 Requires PHP: 8.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0
@@ -113,6 +113,10 @@ Dark Mode Colours, Menu Responsive, Editorial Text, Style Templates, JSON PowerE
 5. Style Templates — saving and applying a style preset from the Style tab.
 
 == Changelog ==
+
+= 4.3.14 =
+* Fixed: AJAX Load More/Infinite Load on archive pages (category, tag, author, etc.) returned an empty response and stopped working. Caused by the 4.3.8 security fix checking the post ID before it was resolved for archive listings.
+* Fixed: "Cannot redeclare control" PHP notice on the Nav Menu widget's Style tab color controls, logged when Elementor's optimized control loading stores them separately from the controls our remove_control() call was clearing.
 
 = 4.3.13 =
 * Security: Dynamic Repeater Builder's save/break binding handlers now verify that the binding entry being written actually belongs to the post being edited, closing a gap where a Contributor could hijack or erase another post's binding using their own post as cover. Thanks to Animesh (Automattic) for the report.
